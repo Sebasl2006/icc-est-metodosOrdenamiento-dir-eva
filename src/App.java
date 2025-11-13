@@ -1,8 +1,26 @@
+
 import models.Car;
+import controllers.CarController;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        System.out.println("Hello, World!");
+
+        Car[] cars = makeCarsList();
+        System.out.println("-------Arreglo sin Ordenar--------");
+        for (Car c : cars) {
+            System.out.println(c);
+
+        }
+        System.out.println("-------Arreglo Ordenado Por Nombre-------");
+        CarController carControllers = new CarController();
+        carControllers.sortByName(cars);
+        for (Car car : cars) {
+            System.out.println(car);
+
+        }
+
+        System.out.println(" Sebastian Lopez");
+
     }
 
     public static Car[] makeCarsList() {
